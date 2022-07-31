@@ -1,0 +1,16 @@
+namespace: radiorabe
+name: foreman
+version: 0.0.0
+readme: README.md
+authors:
+  - Lucas Bickel <@hairmare>
+description: Roles managing Foreman (mainly what's missing from FAM)
+license_file: LICENSE
+tags:
+  - radiorabe
+  - foreman
+dependencies: {}
+repository: https://github.com/radiorabe/ansible-collection-foreman
+documentation: https://github.com/radiorabe/ansible-collection-foreman/blob/main/README.md
+homepage: hhttps://github.com/radiorabe/ansible-collection-foreman
+issues: https://github.com/radiorabe/ansible-collection-foreman/issues

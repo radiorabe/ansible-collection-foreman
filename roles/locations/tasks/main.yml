@@ -1,0 +1,16 @@
+---
+- name: Add locations
+  theforeman.foreman.location:
+    # common args
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    # location args
+    name: "{{ foreman_locations_item.name }}"
+    parent: "{{ foreman_locations_item.parent | default(omit) }}"
+    organizations: "{{ foreman_locations_item.organizations | default(omit) }}"
+    state: "{{ foreman_locations_item.state | default(omit) }}"
+  loop: "{{ foreman_locations | default([]) }}"
+  loop_control:
+    loop_var: foreman_locations_item
