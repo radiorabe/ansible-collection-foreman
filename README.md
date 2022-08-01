@@ -4,6 +4,7 @@ Contains foreman roles and playbooks.
 
 ## Roles
 
+* [`architectures`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/architectures)
 * [`locations`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/locations)
 
 ## License

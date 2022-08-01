@@ -34,4 +34,5 @@ jobs:
       uses: ansible-community/ansible-lint-action@v6
       with:
         targets: |
+          roles/architectures
           roles/locations
