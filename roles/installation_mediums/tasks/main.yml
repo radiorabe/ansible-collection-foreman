@@ -1,0 +1,15 @@
+---
+- name: Add installation_mediums
+  theforeman.foreman.installation_medium:
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_installation_mediums_item.name }}"
+    updated_name: "{{ foreman_installation_mediums_item.updated_name | default(omit) }}"
+    os_family: "{{ foreman_installation_mediums_item.os_family | default(omit) }}"
+    path: "{{ foreman_installation_mediums_item.path | default(omit) }}"
+    state: "{{ foreman_installation_mediums_item.state | default(omit) }}"
+  loop: "{{ foreman_installation_mediums | default([]) }}"
+  loop_control:
+    loop_var: foreman_installation_mediums_item

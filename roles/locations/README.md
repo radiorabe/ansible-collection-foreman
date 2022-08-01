@@ -34,7 +34,7 @@ The `radiorabe.foreman.locations` role depends on modules from the [`theforeman.
         foreman_password: changeme
         foreman_locations:
           - name: Randweg
-            origanizations:
+            organizations:
               - RaBe
             state: present
 ```
