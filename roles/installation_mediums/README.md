@@ -28,15 +28,67 @@ The `radiorabe.foreman.installation_mediums` role depends on modules from the [`
   gather_facts: false
   roles:
     - role: radiorabe.foreman.installation_mediums
-      vars: 
+      vars:
         foreman_server_url: https://foreman.example.com
         foreman_username: admin
         foreman_password: changeme
         foreman_installation_mediums:
+          - name: CentOS 7 mirror
+            state: present
+            os_family: Redhat
+            path: http://mirror.centos.org/centos/$major/os/$arch
+          - name: CentOS 8 mirror
+            state: present
+            os_family: Redhat
+            path: http://mirror.centos.org/centos/$major/BaseOS/$arch/kickstart
           - name: CentOS Stream
             state: present
             os_family: Redhat
             path: http://mirror.centos.org/centos/$major-stream/BaseOS/$arch/os
+          - name: CoreOS mirror
+            state: present
+            os_family: Coreos
+            path: http://$release-temporary-archive.release.core-os.net
+          - name: Debian mirror
+            state: present
+            os_family: Debian
+            path: http://ftp.debian.org/debian
+          - name: Fedora Atomic mirror
+            state: present
+            os_family: Redhat
+            path: http://dl.fedoraproject.org/pub/alt/atomic/stable/Cloud_Atomic/$arch/os/
+          - name: Fedora CoreOS mirror
+            state: present
+            os_family: Fcos
+            path: https://builds.coreos.fedoraproject.org
+          - name: Fedora mirror
+            state: present
+            os_family: Redhat
+            path: http://dl.fedoraproject.org/pub/fedora/linux/releases/$major/Server/$arch/os/
+          - name: Flatcar mirror
+            state: present
+            os_family: Coreos
+            path: http://$release.release.flatcar-linux.net
+          - name: FreeBSD mirror
+            state: present
+            os_family: Freebsd
+            path: http://ftp.freebsd.org/pub/FreeBSD/releases/$arch/$version-RELEASE/
+          - name: OpenSUSE mirror
+            state: present
+            os_family: Suse
+            path: http://download.opensuse.org/distribution/leap/$version/repo/oss
+          - name: RancherOS mirror
+            state: present
+            os_family: Rancheros
+            path: https://github.com/rancher/os/releases/download/v$version
+          - name: Red Hat CoreOS mirror
+            state: present
+            os_family: Rhcos
+            path: http://mirror.openshift.com
+          - name: Ubuntu mirror
+            state: present
+            os_family: Debian
+            path: http://archive.ubuntu.com/ubuntu
 ```
 
 ## License
