@@ -32,7 +32,7 @@ The `radiorabe.foreman.locations` role depends on modules from the [`theforeman.
         foreman_server_url: https://foreman.example.com
         foreman_username: admin
         foreman_password: changeme
-        foreman_organizations: 
+        foreman_locations:
           - name: Randweg
             origanizations:
               - RaBe

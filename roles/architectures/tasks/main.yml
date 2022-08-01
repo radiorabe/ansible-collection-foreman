@@ -1,0 +1,13 @@
+---
+- name: Add architectures
+  theforeman.foreman.architecture:
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_architectures_item.name }}"
+    operatingsystems: "{{ foreman_architectures_item.operatingsystems | default(omit) }}"
+    state: "{{ foreman_architectures_item.state | default(omit) }}"
+  loop: "{{ foreman_architectures | default([]) }}"
+  loop_control:
+    loop_var: foreman_architectures_item
