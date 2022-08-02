@@ -13,4 +13,3 @@ jobs:
        roles/architectures
        roles/installation_mediums
        roles/locations
-
