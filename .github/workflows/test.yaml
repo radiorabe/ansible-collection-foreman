@@ -6,34 +6,11 @@ on:
       - main
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
+  call-workflow:
+    uses: radiorabe/actions/.github/workflows/test-ansible-collection.yaml@main
+    with:
+      targets: |
+       roles/architectures
+       roles/installation_mediums
+       roles/locations
 
-    - name: Set up Python 3
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-
-    - name: Lint with flake8
-      run: |
-        pip install flake8
-        flake8 . --count --show-source --statistics
-
-    - name: Lint with black
-      run: |
-        pip install --pre black
-        black .
-
-    - name: Lint with ansible-lint
-      uses: ansible-community/ansible-lint-action@v6
-      with:
-        targets: |
-          roles/architectures
-          roles/installation_mediums
-          roles/locations
