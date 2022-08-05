@@ -1,0 +1,14 @@
+---
+- name: Add roles
+  theforeman.foreman.role:
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_roles_item.name }}"
+    description: "{{ foreman_roles_item.description | default(omit) }}"
+    filters: "{{ foreman_roles_item.filters | default(omit) }}"
+    state: "{{ foreman_roles_item.state | default(omit) }}"
+  loop: "{{ foreman_roles | default([]) }}"
+  loop_control:
+    loop_var: foreman_roles_item
