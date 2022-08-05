@@ -8,6 +8,7 @@ Contains foreman roles and playbooks.
 * [`global_parameters`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/global_parameters)
 * [`installation_mediums`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/installation_mediums)
 * [`locations`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/locations)
+* [`roles`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/roles)
 
 ## License
 

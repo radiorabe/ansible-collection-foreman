@@ -9,7 +9,7 @@
     updated_name: "{{ foreman_global_parameters_item.updated_name | default(omit) }}"
     value: "{{ foreman_global_parameters_item.value | default(omit) }}"
     hidden_value: "{{ foreman_global_parameters_item.hidden_value | default(omit) }}"
-    parameter_type: "{{ foreman_global_parameters_item.parameter_type | default(omit) }}" 
+    parameter_type: "{{ foreman_global_parameters_item.parameter_type | default(omit) }}"
     state: "{{ foreman_global_parameters_item.state | default(omit) }}"
   loop: "{{ foreman_global_parameters | default([]) }}"
   loop_control:
