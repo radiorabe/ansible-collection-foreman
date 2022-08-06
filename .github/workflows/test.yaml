@@ -12,4 +12,6 @@ jobs:
       targets: |
        roles/architectures
        roles/installation_mediums
+       roles/job_templates
        roles/locations
+       roles/roles

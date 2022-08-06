@@ -1,0 +1,20 @@
+---
+- name: Add job_templates
+  theforeman.foreman.job_template:
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    state: "{{ foreman_job_templates_item.state | default(omit) }}"
+    audit_comment: "{{ foreman_job_templates_item.audit_comment | default(omit) }}"
+    description_format: "{{ foreman_job_templates_item.description_format | default(omit) }}"
+    file_name: "{{ foreman_job_templates_item.file_name | default(omit) }}"
+    job_category: "{{ foreman_job_templates_item.job_category | default(omit) }}"
+    locked: "{{ foreman_job_templates_item.locked | default(omit) }}"
+    name: "{{ foreman_job_templates_item.name | default(omit) }}"
+    provider_type: "{{ foreman_job_templates_item.provider_type | default(omit) }}"
+    snippet: "{{ foreman_job_templates_item.snippet | default(omit) }}"
+    template: "{{ foreman_job_templates_item.template | default(omit) }}"
+    template_inputs: "{{ foreman_job_templates_item.template_inputs | default(omit) }}"
+  loop: "{{ foreman_job_templates | default([]) }}"
+  loop_control:
+    loop_var: foreman_job_templates_item
