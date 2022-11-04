@@ -14,6 +14,7 @@ The following fields are optional in the sense that the server will use default 
 
 - `updated_name`: New full installation medium name. When this parameter is set, the module will not be idempotent.
 - `os_family`: The OS family the template shall be assigned with. If no `os_family` is set but a operatingsystem, the value will be derived from it.
+- `operatingsystems`: Dict of operatingsystems. See, `os_family` for options.
 - `path`: Path or URL to the installation medium.
 
 ## Dependencies
