@@ -1,0 +1,16 @@
+---
+- name: Add realms
+  theforeman.foreman.realm:
+    # common args
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    # realm args
+    name: "{{ foreman_realms_item.name }}"
+    realm_proxy: "{{ foreman_realms_item.realm_proxy | default(omit) }}"
+    realm_type: "{{ foreman_realms_item.realm_type | default(omit) }}"
+    state: "{{ foreman_realms_item.state | default(omit) }}"
+  loop: "{{ foreman_realms | default([]) }}"
+  loop_control:
+    loop_var: foreman_realms_item
