@@ -6,6 +6,7 @@ Contains foreman roles and playbooks.
 
 * [`architectures`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/architectures)
 * [`global_parameters`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/global_parameters)
+* [`hosts`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/hosts)
 * [`installation_mediums`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/installation_mediums)
 * [`job_templates`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/job_templates)
 * [`locations`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/locations)

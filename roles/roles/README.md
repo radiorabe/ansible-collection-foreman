@@ -6,7 +6,7 @@ This role creates and manages roles in Foreman.
 
 This role supports the [FAM Common Role Variables](https://github.com/theforeman/foreman-ansible-modules/blob/develop/README.md#common-role-variables).
 
-The main data structure for this role is the list of `foreman_roles`. Each `location` requires the following fields:
+The main data structure for this role is the list of `foreman_roles`. Each `role` requires the following fields:
 
 - `name`: The name of the role.
 

@@ -1,0 +1,28 @@
+---
+- name: Add hosts
+  theforeman.foreman.host:
+    # common args
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    # host args
+    name: "{{ foreman_hosts_item.name }}"
+    hostgroup: "{{ foreman_hosts_item.hostgroup | default(omit) }}"
+    location: "{{ foreman_hosts_item.location | default(omit) }}"
+    organization: "{{ foreman_hosts_item.organization | default(omit) }}"
+    build: "{{ foreman_hosts_item.build | default(omit) }}"
+    enabled: "{{ foreman_hosts_item.enabled | default(omit) }}"
+    managed: "{{ foreman_hosts_item.managed | default(omit) }}"
+    ip: "{{ foreman_hosts_item.ip | default(omit) }}"
+    mac: "{{ foreman_hosts_item.mac | default(omit) }}"
+    comment: "{{ foreman_hosts_item.comment | default(omit) }}"
+    owner: "{{ foreman_hosts_item.owner | default(omit) }}"
+    owner_group: "{{ foreman_hosts_item.owner_group | default(omit) }}"
+    provision_method: "{{ foreman_hosts_item.provision_method | default(omit) }}"
+    image: "{{ foreman_hosts_item.image | default(omit) }}"
+    compute_attributes: "{{ foreman_hosts_item.compute_attributes | default(omit) }}"
+    interfaces_attributes: "{{ foreman_hosts_item.interfaces_attributes | default(omit) }}"
+  loop: "{{ foreman_hosts | default([]) }}"
+  loop_control:
+    loop_var: foreman_hosts_item
