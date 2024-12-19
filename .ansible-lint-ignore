@@ -1,0 +1,4 @@
+# This file contains ignores rule violations for ansible-lint
+
+# We should start writing changelogs at some point
+galaxy.yml galaxy[no-changelog]

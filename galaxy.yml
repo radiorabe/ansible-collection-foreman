@@ -1,3 +1,4 @@
+---
 namespace: radiorabe
 name: foreman
 version: 0.0.0
@@ -9,7 +10,9 @@ license_file: LICENSE
 tags:
   - radiorabe
   - foreman
-dependencies: {}
+  - infrastructure
+dependencies:
+  theforeman.foreman: ">=4.2.0"
 repository: https://github.com/radiorabe/ansible-collection-foreman
 documentation: https://github.com/radiorabe/ansible-collection-foreman/blob/main/README.md
 homepage: hhttps://github.com/radiorabe/ansible-collection-foreman
