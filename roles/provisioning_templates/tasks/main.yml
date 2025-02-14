@@ -1,0 +1,19 @@
+---
+- name: Add provisioning_templates
+  theforeman.foreman.provisioning_template:
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    state: "{{ foreman_provisioning_templates_item.state | default(omit) }}"
+    audit_comment: "{{ foreman_provisioning_templates_item.audit_comment | default(omit) }}"
+    kind: "{{ foreman_provisioning_templates_item.kind | default(omit) }}"
+    file_name: "{{ foreman_provisioning_templates_item.file_name | default(omit) }}"
+    locations: "{{ foreman_provisioning_templates_item.locations | default(omit) }}"
+    locked: "{{ foreman_provisioning_templates_item.locked | default(omit) }}"
+    name: "{{ foreman_provisioning_templates_item.name | default(omit) }}"
+    operatingsystems: "{{ foreman_provisioning_templates_item.operatingsystems | default(omit) }}"
+    organizations: "{{ foreman_provisioning_templates_item.organizations | default(omit) }}"
+    template: "{{ foreman_provisioning_templates_item.template | default(omit) }}"
+  loop: "{{ foreman_provisioning_templates | default([]) }}"
+  loop_control:
+    loop_var: foreman_provisioning_templates_item
