@@ -2,7 +2,8 @@
 exclude_paths:
   - .github/
   - venv/
-write_list:
-  - all
-warn_list:
+skip_list:
+  # We should start writing changelogs at some point
+  - galaxy[no-changelog]
+  # We need ansible 2.14 for EL9
   - meta-runtime[unsupported-version]
