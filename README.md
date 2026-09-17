@@ -11,6 +11,7 @@ Contains foreman roles and playbooks.
 * [`job_templates`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/job_templates)
 * [`provisioning_templates`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/provisioning_templates)
 * [`locations`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/locations)
+* [`partition_tables`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/partition_tables)
 * [`realms`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/realms)
 * [`roles`](https://github.com/radiorabe/ansible-collection-foreman/tree/main/roles/roles)
 
