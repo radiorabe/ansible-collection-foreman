@@ -1,0 +1,19 @@
+---
+- name: Add partition_tables
+  theforeman.foreman.partition_table:
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_partition_tables_item.name }}"
+    updated_name: "{{ foreman_partition_tables_item.updated_name | default(omit) }}"
+    os_family: "{{ foreman_partition_tables_item.os_family | default(omit) }}"
+    layout: "{{ foreman_partition_tables_item.layout | default(omit) }}"
+    file_name: "{{ foreman_partition_tables_item.file_name | default(omit) }}"
+    locked: "{{ foreman_partition_tables_item.locked | default(omit) }}"
+    locations: "{{ foreman_partition_tables_item.locations | default(omit) }}"
+    organizations: "{{ foreman_partition_tables_item.organizations | default(omit) }}"
+    state: "{{ foreman_partition_tables_item.state | default(omit) }}"
+  loop: "{{ foreman_partition_tables | default([]) }}"
+  loop_control:
+    loop_var: foreman_partition_tables_item
